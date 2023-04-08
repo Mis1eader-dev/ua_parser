@@ -6,7 +6,9 @@ set(UA_PARSER_SOURCES
 	src/ua_parser.cpp
 )
 
-add_executable(ua_parser src/main.cpp ${UA_PARSER_SOURCES})
+add_executable(${PROJECT_NAME} src/main.cpp ${UA_PARSER_SOURCES})
+
+add_library(${PROJECT_NAME} STATIC ${UA_PARSER_SOURCES})
 
 set_target_properties(${PROJECT_NAME}
 	PROPERTIES
