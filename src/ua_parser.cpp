@@ -17,17 +17,22 @@ uint8_t ua_parser::parse(std::string_view s)
 	}
 	s = s.substr(it - begin);
 	if(s.size() < 3)return DEVICE_UNKNOWN; // Smallest match is 3 characters
-	if(s.starts_with("Linux; Android"))return DEVICE_ANDROID | MOBILE;
-	if(s.starts_with("iPhone"))return DEVICE_IPHONE | MOBILE;
-	if(s.starts_with("Windows "))
+	else if(s.starts_with("Linux; Android"))return DEVICE_ANDROID | MOBILE;
+	else if(s.starts_with("iP"))
+	{
+		s = s.substr(2);
+		if(s.starts_with("hone"))return DEVICE_IPHONE | MOBILE;
+		else if(s.starts_with("ad"))return DEVICE_IPAD | MOBILE;
+		else if(s.starts_with("od"))return DEVICE_IPOD | MOBILE;
+	}
+	else if(s.starts_with("Windows "))
 	{
 		s = s.substr(8);
 		if(s.starts_with("NT"))return DEVICE_WINDOWS;
 		if(s.starts_with("Phone"))return DEVICE_WINDOWS_PHONE | MOBILE;
-		return DEVICE_UNKNOWN;
 	}
-	if(s.starts_with("Macintosh"))return DEVICE_MAC_OS;
-	if(s.starts_with("X11"))
+	else if(s.starts_with("Macintosh"))return DEVICE_MAC_OS;
+	else if(s.starts_with("X11"))
 	{
 		s = s.substr(3);
 		if(s.starts_with("; CrOS"))return DEVICE_CHROME_OS;
