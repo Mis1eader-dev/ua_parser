@@ -22,8 +22,8 @@ uint8_t ua_parser::parse(std::string_view s)
 	{
 		s = s.substr(2);
 		if(s.starts_with("hone"))return DEVICE_IPHONE | MOBILE;
-		else if(s.starts_with("ad"))return DEVICE_IPAD | MOBILE;
-		else if(s.starts_with("od"))return DEVICE_IPOD | MOBILE;
+		if(s.starts_with("ad"))return DEVICE_IPAD | MOBILE;
+		if(s.starts_with("od"))return DEVICE_IPOD | MOBILE;
 	}
 	else if(s.starts_with("Windows "))
 	{
