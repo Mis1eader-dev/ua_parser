@@ -10,7 +10,7 @@ set(UA_PARSER_SOURCES
 	src/ua_parser.cpp
 )
 set(UA_PARSER_HEADER
-	inc/ua_parser.hpp
+	inc/ua_parser/ua_parser.hpp
 )
 
 include_directories(inc)
@@ -34,7 +34,7 @@ project(
 add_library(${PROJECT_NAME} STATIC ${UA_PARSER_SOURCES} ${UA_PARSER_HEADER})
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/inc>
+	$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/inc>
 )
 
 set_target_properties(${PROJECT_NAME}
