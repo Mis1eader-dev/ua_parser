@@ -22,14 +22,14 @@ project(
 
 add_library(${PROJECT_NAME} STATIC ${UA_PARSER_SOURCES} ${UA_PARSER_HEADER})
 
-target_include_directories(${PROJECT_NAME} PUBLIC
-	$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/inc>
-)
-
 set_target_properties(${PROJECT_NAME}
 	PROPERTIES
 	CXX_STANDARD 20
 	CXX_EXTENSIONS off
+)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+	$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/inc>
 )
 
 
@@ -44,13 +44,13 @@ project(
 
 add_executable(${PROJECT_NAME} src/main.cpp ${UA_PARSER_SOURCES})
 
-target_include_directories(${PROJECT_NAME} PRIVATE
-	$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/inc>
-)
-
 set_target_properties(${PROJECT_NAME}
 	PROPERTIES
 	CXX_STANDARD 20
 	CXX_EXTENSIONS off
 	OUTPUT_NAME ${UA_PARSER_TARGET_NAME}
+)
+
+target_include_directories(${PROJECT_NAME} PRIVATE
+	$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/inc>
 )
