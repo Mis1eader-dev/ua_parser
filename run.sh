@@ -1,1 +1,1 @@
-./build/ua_parser_bin "$@"
+./build/ua_parser "$@"
