@@ -1,1 +1,1 @@
-cmake -GNinja . -B./build
+cmake . -G Ninja -B ./build
