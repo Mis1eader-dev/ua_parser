@@ -1,1 +1,5 @@
-cmake . -G Ninja -B ./build
+#!/bin/bash
+
+cd $(dirname $0)
+
+cmake . -B ./build
