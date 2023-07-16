@@ -10,14 +10,19 @@ set(UA_PARSER_HEADER
 	inc/ua_parser/ua_parser.hpp
 )
 
+# Options
+
+set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+set(CMAKE_BUILD_TYPE Release)
+
 
 
 # Lib
 
 project(
 	${UA_PARSER_TARGET_NAME}
-	LANGUAGES CXX
 	VERSION 1.0.0
+	LANGUAGES CXX
 )
 
 add_library(${PROJECT_NAME} STATIC ${UA_PARSER_SOURCES} ${UA_PARSER_HEADER})
