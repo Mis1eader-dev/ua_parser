@@ -6,7 +6,7 @@ set(UA_PARSER_SOURCES
 	src/ua_parser.cpp
 )
 
-set(UA_PARSER_HEADER
+set(UA_PARSER_HEADERS
 	inc/ua_parser/ua_parser.hpp
 )
 
@@ -25,7 +25,7 @@ project(
 	LANGUAGES CXX
 )
 
-add_library(${PROJECT_NAME} STATIC ${UA_PARSER_SOURCES} ${UA_PARSER_HEADER})
+add_library(${PROJECT_NAME} STATIC ${UA_PARSER_SOURCES} ${UA_PARSER_HEADERS})
 
 set_target_properties(${PROJECT_NAME}
 	PROPERTIES
