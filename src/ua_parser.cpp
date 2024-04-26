@@ -1,4 +1,5 @@
 #include "ua_parser/ua_parser.hpp"
+#include <cstdint>
 
 using namespace ua_parser;
 
