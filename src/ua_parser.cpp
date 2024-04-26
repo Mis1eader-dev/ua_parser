@@ -1,7 +1,6 @@
 #include "ua_parser/ua_parser.hpp"
 #include <cstdint>
-
-using namespace ua_parser;
+#include <string_view>
 
 uint8_t ua_parser::parse(std::string_view s)
 {

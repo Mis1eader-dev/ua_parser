@@ -1,5 +1,5 @@
-#include <iostream>
 #include "ua_parser/ua_parser.hpp"
+#include <iostream>
 
 int main(int argc, char** argv)
 {

@@ -6,10 +6,6 @@ set(UA_PARSER_SOURCES
 	src/ua_parser.cpp
 )
 
-set(UA_PARSER_HEADERS
-	inc/ua_parser/ua_parser.hpp
-)
-
 # Options
 
 set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
@@ -25,7 +21,7 @@ project(
 	LANGUAGES CXX
 )
 
-add_library(${PROJECT_NAME} STATIC ${UA_PARSER_SOURCES} ${UA_PARSER_HEADERS})
+add_library(${PROJECT_NAME} STATIC ${UA_PARSER_SOURCES})
 
 set_target_properties(${PROJECT_NAME}
 	PROPERTIES

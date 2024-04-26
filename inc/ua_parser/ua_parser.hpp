@@ -1,5 +1,4 @@
 #include <cstdint>
-#include <string>
 #include <string_view>
 
 namespace ua_parser
