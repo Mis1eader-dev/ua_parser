@@ -12,6 +12,7 @@ int main(int argc, char** argv)
 	}
 	for(char** arg = argv, **argEnd = argv + argc; arg != argEnd; ++arg)
 	{
-		std::cout << '\n' << *arg << " => " << (unsigned int)ua_parser::parse(*arg) << '\n';
+		auto deviceInfo = ua_parser::parseInfo(*arg);
+		std::cout << '\n' << *arg << " => " << (unsigned int)deviceInfo.type << " (Is Mobile: " << (deviceInfo.isMobile ? "Yes" : "No") << ")\n";
 	}
 }

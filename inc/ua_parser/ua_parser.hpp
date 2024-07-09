@@ -15,8 +15,30 @@ namespace ua_parser
 		DEVICE_IPAD,
 		DEVICE_IPOD,
 		DEVICE_WINDOWS_PHONE,
-		MOBILE = 1 << 5,
 	};
+	struct DeviceInfo
+	{
+		Info type;
+		bool isMobile = false;
+	};
+	DeviceInfo parseInfo(std::string_view userAgent);
 
-	uint8_t parse(std::string_view s);
+
+
+	enum OS : uint8_t
+	{
+		OS_UNKNOWN,
+		OS_WINDOWS,
+		OS_MAC_OS,
+		OS_LINUX,
+		OS_CHROME_OS,
+		OS_ANDROID,
+		OS_IOS,
+	};
+	struct DeviceOS
+	{
+		OS os;
+		bool isMobile = false;
+	};
+	DeviceOS parseOS(std::string_view userAgent);
 }
